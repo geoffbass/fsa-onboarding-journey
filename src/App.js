@@ -1,26 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
+import QuestionField from './QuestionField';
 import './App.css';
 
+const sampleQuestion = {
+  question: 'Which of these is a?',
+  choices: ['a', 'b', 'c'],
+  answer: 'a',
+};
+
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      questions: [],
+      currentQuestionId: 0,
+      questionFieldOpen: false,
+    };
+    this.toggleQuestionField = this.toggleQuestionField.bind(this);
+  }
+
+  toggleQuestionField() {
+    this.setState(prevState => ({
+      questionFieldOpen: !prevState.questionFieldOpen,
+    }));
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Fragment>
+        <h1>Video goes here</h1>
+        <button onClick={this.toggleQuestionField}>
+          {this.state.questionFieldOpen ? 'Hide' : 'Show'} Question
+        </button>
+        {this.state.questionFieldOpen && <QuestionField {...sampleQuestion} />}
+      </Fragment>
     );
   }
 }
