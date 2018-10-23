@@ -1,0 +1,10 @@
+question: “Wait one more Q: What’s the language for building the content-layer of web applications: text, images, and links? I think it stands for ‘Hypertext Markup Language’ or something.”
+choices:
+  a: HTML
+  b: JS
+  c: CSS
+answer: a
+videoUrl: https://youtu.be/blahblah
+text: |
+  Well done, recruit. You’ve handled kitchen convos, the random Slack, and now you move on to the final stage of the Nimitulator. You have to go to:
+

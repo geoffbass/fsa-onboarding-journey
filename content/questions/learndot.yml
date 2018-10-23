@@ -1,0 +1,9 @@
+question: “What’s our custom-designed proprietary Learning Management System (LMS) - used to provide exercises, grade student work, manage and assess student progress etc?”
+choices:
+  a: learnDot
+  b: back-end
+  c: CSS
+answer: a
+videoUrl: https://youtu.be/blahblah
+text: |
+  “Great job making it this far,” Nimit says. “Made it by the skin of your teeth though. Skin with teeth? Don’t think about it.” He smiles. “To finally show you have what it takes to be a Fullstack Academy of Code Agent, you have to answer these questions correctly.”

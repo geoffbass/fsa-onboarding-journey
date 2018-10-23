@@ -1,0 +1,9 @@
+question: “Hey sup? My stomachs been hurting me all day. Can’t even look at that food right now. Quick question: what’s a program that gives an exact solution to a problem, even if it takes a really long time. For example, alphabetizing a list of 2 million usernames.” 
+choices:
+  a: Algorithm
+  b: Heuristic
+  c: CSS
+answer: a
+videoUrl: https://youtu.be/blahblah
+text: |
+  You, the new hire sit in the kitchen to enjoy your delicious lunch from SoHo Moto, the one your teammate told you had the best udon soup, and after a few bites, an unsuspecting employee walks up to you with a few questions. How do you answer?

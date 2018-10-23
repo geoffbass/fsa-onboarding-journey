@@ -1,0 +1,9 @@
+question: "This slipped my mind yesterday. What’s a daily pair-programming exercise that our students begin their day with?”
+choices:
+  a: REACTO
+  b: back-end
+  c: CSS
+answer: a
+videoUrl: https://youtu.be/blahblah
+text: |
+  After that onslaught, you decide to go to your desk to be safe. Finish up that soup before it gets cold. Something tells you it won’t last. As soon as you open your Email inbox, you receive a Slack with some questions from a coworker you started the training with. How do you respond?

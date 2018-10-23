@@ -1,0 +1,7 @@
+name: Kitchen
+x: 200
+y: 200
+questionIds:
+  - algorithm
+  - reacto
+

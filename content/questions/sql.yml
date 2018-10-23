@@ -1,0 +1,9 @@
+question: “Dude, what’s that language for interacting with a database called? It let's you say stuff like, ‘Give me the names of all users who own a dog named Fido.’ A student brought it up a few minutes ago on Slack and I have no idea what it is.”
+choices:
+  a: SQL
+  b: back-end
+  c: CSS
+answer: a
+videoUrl: https://youtu.be/blahblah
+text: |
+  After that onslaught, you decide to go to your desk to be safe. Finish up that soup before it gets cold. Something tells you it won’t last. As soon as you open your Email inbox, you receive a Slack with some questions from a coworker you started the training with. How do you respond?
