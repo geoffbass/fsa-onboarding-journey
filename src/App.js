@@ -46,6 +46,7 @@ class App extends Component {
   }
 
   render() {
+    const open = this.state.questionFieldOpen;
     return (
       <Fragment>
         {this.state.currentQuestionIndex >= this.state.planet.length ? (
@@ -53,10 +54,10 @@ class App extends Component {
         ) : (
           <Fragment>
             <h1>Video goes here</h1>
-            <button onClick={this.toggleQuestionField}>
-              {this.state.questionFieldOpen ? 'Hide' : 'Show'} Question
+            <button className="toggleBtn" onClick={this.toggleQuestionField}>
+              {open ? 'Hide' : 'Show'} Question {open ? 'v' : '>'}
             </button>
-            {this.state.questionFieldOpen && (
+            {open && (
               <QuestionField
                 {...this.getCurrentQuestion()}
                 handleSubmit={this.answerQuestion}
