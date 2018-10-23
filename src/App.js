@@ -1,22 +1,45 @@
 import React, { Component, Fragment } from 'react';
 import QuestionField from './QuestionField';
 import './App.css';
+const { progressions, questions } = require('./content.json');
+const holygrail = progressions.holygrail;
 
-const sampleQuestion = {
-  question: 'Which of these is a?',
-  choices: ['a', 'b', 'c'],
-  answer: 'a',
-};
+console.log('progressions', progressions);
+console.log('questions', questions);
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      questions: [],
-      currentQuestionId: 0,
+      progression: holygrail,
+      questions,
+      currentQuestionIndex: 0,
       questionFieldOpen: false,
     };
+    this.answerQuestion = this.answerQuestion.bind(this);
+    this.getCurrentQuestion = this.getCurrentQuestion.bind(this);
     this.toggleQuestionField = this.toggleQuestionField.bind(this);
+  }
+
+  answerQuestion(submitEvent) {
+    submitEvent.preventDefault();
+    const submittedChoice = submitEvent.target.choice.value;
+    const currentQuestion = this.getCurrentQuestion();
+    const correctAnswer = currentQuestion.answer;
+    if (submittedChoice === correctAnswer) {
+      this.setState(prevState => ({
+        currentQuestionIndex: prevState.currentQuestionIndex + 1,
+        questionFieldOpen: false,
+      }));
+    } else {
+      alert('nope!');
+    }
+  }
+
+  getCurrentQuestion() {
+    return this.state.questions[
+      this.state.progression[this.state.currentQuestionIndex]
+    ];
   }
 
   toggleQuestionField() {
@@ -28,11 +51,22 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Video goes here</h1>
-        <button onClick={this.toggleQuestionField}>
-          {this.state.questionFieldOpen ? 'Hide' : 'Show'} Question
-        </button>
-        {this.state.questionFieldOpen && <QuestionField {...sampleQuestion} />}
+        {this.state.currentQuestionIndex >= this.state.progression.length ? (
+          <h2>You win!</h2>
+        ) : (
+          <Fragment>
+            <h1>Video goes here</h1>
+            <button onClick={this.toggleQuestionField}>
+              {this.state.questionFieldOpen ? 'Hide' : 'Show'} Question
+            </button>
+            {this.state.questionFieldOpen && (
+              <QuestionField
+                {...this.getCurrentQuestion()}
+                handleSubmit={this.answerQuestion}
+              />
+            )}
+          </Fragment>
+        )}
       </Fragment>
     );
   }
