@@ -1,10 +1,6 @@
 {
-  "progressions": {
-    "holygrail": [
-      "name",
-      "quest",
-      "favoritecolor"
-    ]
+  "planets": {
+    "holygrail": ["name", "quest", "favoritecolor"]
   },
   "questions": {
     "favoritecolor": {

@@ -1,17 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import QuestionField from './QuestionField';
 import './App.css';
-const { progressions, questions } = require('./content.json');
-const holygrail = progressions.holygrail;
-
-console.log('progressions', progressions);
-console.log('questions', questions);
+const { planets, questions } = require('./content.json');
+const holygrail = planets.holygrail;
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      progression: holygrail,
+      planet: holygrail,
       questions,
       currentQuestionIndex: 0,
       questionFieldOpen: false,
@@ -38,7 +35,7 @@ class App extends Component {
 
   getCurrentQuestion() {
     return this.state.questions[
-      this.state.progression[this.state.currentQuestionIndex]
+      this.state.planet[this.state.currentQuestionIndex]
     ];
   }
 
@@ -51,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        {this.state.currentQuestionIndex >= this.state.progression.length ? (
+        {this.state.currentQuestionIndex >= this.state.planet.length ? (
           <h2>You win!</h2>
         ) : (
           <Fragment>

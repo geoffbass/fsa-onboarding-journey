@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 
-// question, choices, answer
-
 const QuestionField = ({ question, choices, answer, handleSubmit }) => (
   <Fragment>
     <h3>{question}</h3>
