@@ -1,8 +1,36 @@
 {
   "planets": {
-    "holygrail": ["name", "quest", "favoritecolor"]
+    "holygrail": ["name", "quest", "favoritecolor"],
+    "technologies": ["javascript", "node", "react"]
   },
   "questions": {
+    "javascript": {
+      "question": "What is the core language we teach at Fullstack?",
+      "choices": {
+        "a": "Java",
+        "b": "JavaScript",
+        "c": "Python"
+      },
+      "answer": "b"
+    },
+    "node": {
+      "question": "What is the environment Fullstack students use to write 'back-end' or 'server-side' JavaScript?",
+      "choices": {
+        "a": "Node",
+        "b": "Django",
+        "c": "Rails"
+      },
+      "answer": "a"
+    },
+    "react": {
+      "question": "What is the tool Fullstack students use to create front-end Single Page Applications?",
+      "choices": {
+        "a": "Angular",
+        "b": "Vue",
+        "c": "React"
+      },
+      "answer": "c"
+    },
     "favoritecolor": {
       "question": "What is your favorite color?",
       "choices": {

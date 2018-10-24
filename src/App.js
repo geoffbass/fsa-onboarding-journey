@@ -2,15 +2,15 @@ import React, { Component, Fragment } from 'react';
 import QuestionField from './QuestionField';
 import './App.css';
 const { planets, questions } = require('./content.json');
-const holygrail = planets.holygrail;
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      planet: holygrail,
+      planets,
       questions,
       currentQuestionIndex: 0,
+      currentPlanetKey: 'technologies',
       questionFieldOpen: false,
     };
     this.answerQuestion = this.answerQuestion.bind(this);
@@ -35,7 +35,9 @@ class App extends Component {
 
   getCurrentQuestion() {
     return this.state.questions[
-      this.state.planet[this.state.currentQuestionIndex]
+      this.state.planets[this.state.currentPlanetKey][
+        this.state.currentQuestionIndex
+      ]
     ];
   }
 
@@ -49,7 +51,8 @@ class App extends Component {
     const open = this.state.questionFieldOpen;
     return (
       <Fragment>
-        {this.state.currentQuestionIndex >= this.state.planet.length ? (
+        {this.state.currentQuestionIndex >=
+        this.state.planets[this.state.currentPlanetKey].length ? (
           <h2>You win!</h2>
         ) : (
           <Fragment>
